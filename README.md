@@ -79,9 +79,11 @@ main.plugins.inform.display_secondary = [3, 4, 6]
 
    ## Установка
 1. Скопируйте файл `inform.py` в папку `/etc/pwnagotchi/custom-plugins/`:
-   ```bash
-   sudo cp inform.py /etc/pwnagotchi/custom-plugins/
-2. Добавьте следующие строки в файл config.toml для запуска плагина:
+   
+```bash
+sudo cp inform.py /etc/pwnagotchi/custom-plugins/
+```
+3. Добавьте следующие строки в файл config.toml для запуска плагина:
 
 ```toml
 main.plugins.inform.enabled = true

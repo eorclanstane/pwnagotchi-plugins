@@ -35,8 +35,8 @@
 |---------------------------------------------------|---------------------------------------------------------------------------------------------|----------------------------------------------|
 | `main.plugins.inform.enabled`                     | Включает или отключает плагин.                                                              | `true`                                       |
 | `main.plugins.inform.experience_import_enabled`   | Включает импорт опыта из указанного файла.                                                  | `false`                                      |
-| `main.plugins.inform.experience_import_path`      | Путь к файлу для импорта опыта.                                                             | `/etc/pwnagotchi/custom-plugins/inform.json` |
-| `main.plugins.inform.experience_config_file`      | Путь к файлу для сохранения данных опыта.                                                   | `/etc/pwnagotchi/custom-plugins/inform.json` |
+| `main.plugins.inform.experience_import_path`      | Путь к файлу для импорта опыта.                                                             | `/etc/pwnagotchi/update.json`                |
+| `main.plugins.inform.experience_config_file`      | Путь к файлу для сохранения данных опыта.                                                   | `/etc/pwnagotchi/inform.json`                |
 | `main.plugins.inform.birth_date`                  | Дата рождения устройства. Если пусто, берется из `brain.json`.                              | `"2024-11-17"`                               |
 | `main.plugins.inform.update_interval`             | Интервал обновления статистики (в секундах).                                                | `5`                                          |
 | `main.plugins.inform.experience_mode`             | Режим опыта: `epochs_training` для тренировок или `exp` для событий.                        | `"epochs_training"`                          |
@@ -92,7 +92,7 @@ main.plugins.inform.custom_filled_char = "|"
 main.plugins.inform.custom_empty_char = "."
 main.plugins.inform.experience_import_enabled = false
 main.plugins.inform.experience_import_path = ""
-main.plugins.inform.experience_config_file = "/etc/pwnagotchi/custom-plugins/inform.json"
+main.plugins.inform.experience_config_file = "/etc/pwnagotchi/inform.json"
 main.plugins.inform.display_main = [1, 2, 5]
 main.plugins.inform.display_secondary = [3, 4, 6]
 main.plugins.inform.stats_font = "Small"

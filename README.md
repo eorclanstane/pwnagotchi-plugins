@@ -53,9 +53,57 @@
 | `main.plugins.inform.additional_stats_position_x` | Координата X для дополнительного элемента UI.                                               | `60`                                         |
 | `main.plugins.inform.additional_stats_position_y` | Координата Y для дополнительного элемента UI.                                               | `95`                                         |
 
+Плагин поддерживает настройку отображаемых атрибутов через параметры `main.plugins.inform.display_main` и `main.plugins.inform.display_secondary` в `config.toml`. Вы можете указать, какие именно метрики будут показываться в основной и дополнительной области пользовательского интерфейса, используя их номера.
+
+### Список доступных атрибутов
+
+| **Номер атрибута**  | **Описание**                                                                                      |
+|---------------------|---------------------------------------------------------------------------------------------------|
+| **1: Эпоха**        | Показывает общее количество завершенных эпох (итераций обучения Pwnagotchi).                      |
+| **2: Тренировок**   | Отображает общее количество выполненных тренировочных шагов (обучение искусственного интеллекта). |
+| **3: Родился**      | Дата рождения устройства. Если не указана, берется из файла `brain.json`.                         |
+| **4: Прожито**      | Количество дней с момента рождения устройства.                                                    |
+| **5: Уровень**      | Текущий уровень устройства, основанный на накопленном опыте.                                      |
+| **6: Опыт**         | Текущий прогресс опыта до следующего уровня, в текстовом или графическом формате.                 |
+
+### Пример конфигурации
+
+Чтобы отобразить в основной области UI **Эпоха**, **Тренировок**, и **Уровень**, а в дополнительной области **Родился**, **Прожито**, и **Опыт**, добавьте следующее в `config.toml`:
+
+```toml
+main.plugins.inform.display_main = [1, 2, 5]
+main.plugins.inform.display_secondary = [3, 4, 6]
+```
 
    ## Установка
 1. Скопируйте файл `inform.py` в папку `/etc/pwnagotchi/custom-plugins/`:
    ```bash
    sudo cp inform.py /etc/pwnagotchi/custom-plugins/
+2. Добавьте следующие строки в файл config.toml для запуска плагина:
 
+```toml
+Копировать код
+main.plugins.inform.enabled = true
+main.plugins.inform.experience_mode = "epochs_training"
+main.plugins.inform.update_interval = 5
+main.plugins.inform.birth_date = "2024-11-17"
+main.plugins.inform.experience_display = "progress"
+main.plugins.inform.custom_bar_length = 10
+main.plugins.inform.custom_filled_char = "|"
+main.plugins.inform.custom_empty_char = "."
+main.plugins.inform.experience_import_enabled = false
+main.plugins.inform.experience_import_path = ""
+main.plugins.inform.experience_config_file = "/etc/pwnagotchi/custom-plugins/inform.json"
+main.plugins.inform.display_main = [1, 2, 5]
+main.plugins.inform.display_secondary = [3, 4, 6]
+main.plugins.inform.stats_font = "Small"
+main.plugins.inform.stats_position_x = 60
+main.plugins.inform.stats_position_y = 85
+main.plugins.inform.additional_stats_font = "Small"
+main.plugins.inform.additional_stats_position_x = 60
+main.plugins.inform.additional_stats_position_y = 95
+```
+Перезапустите Pwnagotchi для применения изменений:
+
+```bash
+sudo systemctl restart pwnagotchi

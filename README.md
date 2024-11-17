@@ -1,4 +1,4 @@
-# Inform Plugin for Pwnagotchi / Плагин Inform для Pwnagotchi
+# Плагин Inform для Pwnagotchi
 
 **Inform** — это плагин для Pwnagotchi, который отслеживает возраст устройства, прогресс обучения ИИ, статистику опыта и уровня. Плагин позволяет продолжить прогресс с сохраненного уровня благодаря возможности импорта данных из других конфигураций. Он динамически обновляет отображаемую информацию, чередуя выбранные элементы интерфейса.
 
@@ -44,7 +44,7 @@
 | `main.plugins.inform.display_secondary`           | Список атрибутов для отображения в дополнительном элементе UI.                              | `[3, 4, 6]`                                  |
 | `main.plugins.inform.experience_display`          | Тип отображения опыта: `progress` или `custom`.                                             | `"progress"`                                 |
 | `main.plugins.inform.custom_bar_length`           | Длина пользовательской полосы прогресса (в символах).                                       | `10`                                         |
-| `main.plugins.inform.custom_filled_char`          | Символ для заполненной части полосы прогресса.                                              | `"|"`                                        |
+| `main.plugins.inform.custom_filled_char`          | Символ для заполненной части полосы прогресса.                                              | `"\|"`                                       |
 | `main.plugins.inform.custom_empty_char`           | Символ для незаполненной части полосы прогресса.                                            | `"."`                                        |
 | `main.plugins.inform.stats_font`                  | Шрифт для основного элемента UI.                                                            | `"Small"`                                    |
 | `main.plugins.inform.stats_position_x`            | Координата X для основного элемента UI.                                                     | `60`                                         |
